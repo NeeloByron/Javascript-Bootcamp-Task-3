@@ -18,12 +18,14 @@ const termsError = document.getElementById('termsError');
 //Evaluate empty inputs.
 
 //Username - Evaluate empty input
+//inject meaningful text feedback into your error elements 
 if(Username.Value.trim()=== '') {
     UsernameError.textContent = 'Username is required';
     isValid = false;
 }
 
 //Email - Match email strings against a standard pattern criteria
+//inject meaningful text feedback into your error elements 
 const EmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (Email.value.trim()=== '') {
       EmailError.textContent = 'Email address is required';
@@ -35,9 +37,16 @@ else if (!EmailRegex.test(Email.value.trim())) {
 }
 
 //Password - Enforce an 8-character rule on passwords.
+//inject meaningful text feedback into your error elements 
 if (Password.value.trim()=== '') {
     PasswordError.textContent = 'Password is required';
     isValid = false;
 }
+else if (Password.value.length = 8) {
+    PasswordError.textContent = 'Password must be atleast 8 characters long';
+    isValid = false;
+}
+
+
 
 })
