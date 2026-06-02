@@ -22,6 +22,7 @@ const termsError = document.getElementById('termsError');
 if(Username.Value.trim()=== '') {
     UsernameError.textContent = 'Username is required';
     isValid = false;
+    Username.style.border = '2px solid red';
 }
 
 //Email - Match email strings against a standard pattern criteria
@@ -34,6 +35,7 @@ if (Email.value.trim()=== '') {
 else if (!EmailRegex.test(Email.value.trim())) {
     EmailError.textContent = 'Please enter a valid email address'
     isValid = false;
+    Email.style.border = '2px solid red';
 }
 
 //Password - Enforce an 8-character rule on passwords.
@@ -45,6 +47,13 @@ if (Password.value.trim()=== '') {
 else if (Password.value.length = 8) {
     PasswordError.textContent = 'Password must be atleast 8 characters long';
     isValid = false;
+    Password.style.border = '2px solid red';
+}
+
+//Checkbox
+//inject meaningful text feedback into your error elements
+if (!Checkbox.checked) {
+    termsError.textContent = 'You must agree to the terms!';
 }
 
 
