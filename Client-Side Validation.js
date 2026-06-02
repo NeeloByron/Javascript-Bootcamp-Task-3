@@ -17,4 +17,21 @@ const termsError = document.getElementById('termsError');
 //Perform check conditions:
 //Evaluate empty inputs.
 
+//Username - Evaluate empty input
+if(Username.Value.trim()=== '') {
+    UsernameError.textContent = 'Username is required';
+    isValid = false;
+}
+
+//Email - Match email strings against a standard pattern criteria
+const EmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (Email.value.trim()=== '') {
+      EmailError.textContent = 'Email address is required';
+      isValid = false;
+}
+else if (!EmailRegex.test(Email.value.trim())) {
+    EmailError.textContent = 'Please enter a valid email address'
+    isValid = false;
+}
+
 })
