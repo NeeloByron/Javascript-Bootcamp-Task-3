@@ -34,4 +34,10 @@ else if (!EmailRegex.test(Email.value.trim())) {
     isValid = false;
 }
 
+//Password - Enforce an 8-character rule on passwords.
+if (Password.value.trim()=== '') {
+    PasswordError.textContent = 'Password is required';
+    isValid = false;
+}
+
 })
