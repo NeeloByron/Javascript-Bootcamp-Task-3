@@ -14,6 +14,17 @@ const EmailError = document.getElementById('emailError');
 const PasswordError = document.getElementById('PasswordError');
 const termsError = document.getElementById('termsError');
 
+//Reset errors each before validation
+UsernameError.textContent = '';
+EmailError.textContent = '';
+PasswordError.textContent = '';
+termsError.textContent = '';
+//Reset boarders each before validation 
+Username.style.border = '';
+Email.style.border = '';
+Password.style.border = '';
+
+
 //Perform check conditions:
 //Evaluate empty inputs.
 
@@ -65,16 +76,6 @@ if(isValid) {
 else {
     console.log('failed to submit, some of the fields are invalid');
 }
-
-//Reset errors each before validation
-UsernameError.textContent = '';
-EmailError.textContent = '';
-PasswordError.textContent = '';
-termsError.textContent = '';
-//Reset boarders each before validation 
-Username.style.border = '';
-Email.style.border = '';
-Password.style.border = '';
 
 });
 
