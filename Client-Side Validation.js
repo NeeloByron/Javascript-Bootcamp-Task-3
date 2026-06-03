@@ -19,7 +19,8 @@ const termsError = document.getElementById('termsError');
 
 //Username - Evaluate empty input
 //inject meaningful text feedback into your error elements 
-if(Username.Value.trim()=== '') {
+let isValid = true;
+if(Username.value.trim()=== '') {
     UsernameError.textContent = 'Username is required';
     isValid = false;
     Username.style.border = '2px solid red';
@@ -44,7 +45,7 @@ if (Password.value.trim()=== '') {
     PasswordError.textContent = 'Password is required';
     isValid = false;
 }
-else if (Password.value.length = 8) {
+else if (Password.value.length < 8) {
     PasswordError.textContent = 'Password must be atleast 8 characters long';
     isValid = false;
     Password.style.border = '2px solid red';
@@ -54,7 +55,25 @@ else if (Password.value.length = 8) {
 //inject meaningful text feedback into your error elements
 if (!Checkbox.checked) {
     termsError.textContent = 'You must agree to the terms!';
+    isValid = false;
 }
+
+if(isValid) {
+    console.log('All the inputs from user are valid');
+}
+else {
+    console.log('failed to submit, some of the fields are invalid')
+}
+
+//Reset errors each before validation
+UsernameError.textContent = '';
+EmailError.textContent = '';
+PasswordError.textContent = '';
+termsError.textContent = '';
+//Reset boarders each before validation 
+Username.style.border = '';
+Email.style.border = '';
+Password.style.border = '';
 
 
 
