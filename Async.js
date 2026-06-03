@@ -1,0 +1,9 @@
+//Create a fake database inside JavaScript file named:studentDatabase
+const studentDatabase = [
+    {id: 10, firstName: "Neelo", lastName: "Nkhuna", email: "byronnkhuna@gmail.com", course: "JavaScript-task-3", age: 29},
+    {id: 11, firstName: "Sello", lastName: "Malapane", email: "selloMalapane2@outlook.com", course: "HTML learners", age: 25},
+    {id: 12, firstName: "Masaenatso", lastName: "Magabane", email: "ChilwaneMagabane@gmail.com", course: "Accounting", age: 27},
+    {id: 13, firstName: "Samukelo", lastName: "Lesenyeho", email: "samu@yahoo.com", course: "Css", age: 29},
+    {id: 14, firstName: "Yarah", lastName: "Bruce", email: "yara@gmail.com", course: "Webhosting", age: 22}
+
+];
