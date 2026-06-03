@@ -60,9 +60,10 @@ if (!Checkbox.checked) {
 
 if(isValid) {
     console.log('All the inputs from user are valid');
+    startResendCountdown();
 }
 else {
-    console.log('failed to submit, some of the fields are invalid')
+    console.log('failed to submit, some of the fields are invalid');
 }
 
 //Reset errors each before validation
@@ -75,6 +76,34 @@ Username.style.border = '';
 Email.style.border = '';
 Password.style.border = '';
 
+});
 
+//Create a Resend Verification button & mark it disabled by default when the application boots up.
+const ResendButton = document.getElementById('ResendButton');
+let CountDownInterval = null;
 
-})
+function startResendCountdown() {
+    ResendButton.disabled = true;
+//Implement a setlnterval loop that ticks down from 10 to 0 seconds.
+    let second = 10;
+    ResendButton.textContent = `Resend Verification (${seconds}s)`;
+
+    if (CountDownInterval) {
+        clearInterval(CountDownInterval);
+    }
+
+    CountDownInterval = setInterval(function() {
+        seconds = seconds - 1;
+
+        if (seconds > 0) {
+        ResendButton.textContent = `Resend Verification (${seconds}s)`;
+        }
+        else if (seconds === 0) {
+            clearInterval(CountDownInterval)
+            CountDownInterval = null;
+            ResendButton.textContent = 'Resend Verification';
+            ResendButton.disabled = false;
+        }
+      }, 1000);
+    }
+    
