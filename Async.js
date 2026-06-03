@@ -16,3 +16,20 @@ function demonstratesSynchronousExecution() {
 }
 
 demonstratesSynchronousExecution();
+
+//Create a function that retrieves and displays all student records from the studentDatabase after a delay of 3 seconds.
+function displayAllStudents() {
+    console.log('Fetching student records..');
+
+    setTimeout(function() {
+        console.log('All  Student Records -');
+
+        studentDatabase.forEach(function(student) {
+            console.log(`ID: ${student.id} | Name: ${student.firstName} ${student.lastName} | Email: ${student.email} | course: ${student.course} | Age: ${student.age}`);
+         });
+
+        console.log('Total students: ' + studentDatabase.length);
+    },3000)
+    }
+
+displayAllStudents();
