@@ -6,7 +6,7 @@ document.getElementById("SignupForm").addEventListener('submit', function(event)
 const Username = document.getElementById('Username');
 const Email = document.getElementById('Email');
 const Password = document.getElementById('Password');
-const Checkbox = document.getElementById('Checkbox');
+const Checkbox = document.getElementById('checkbox');
 
 //Error span Elements
 const UsernameError = document.getElementById('UsernameError');
@@ -85,7 +85,7 @@ let CountDownInterval = null;
 function startResendCountdown() {
     ResendButton.disabled = true;
 //Implement a setlnterval loop that ticks down from 10 to 0 seconds.
-    let second = 10;
+    let seconds = 10;
     ResendButton.textContent = `Resend Verification (${seconds}s)`;
 
     if (CountDownInterval) {
