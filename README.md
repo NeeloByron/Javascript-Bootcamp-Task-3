@@ -6,13 +6,19 @@
 
 ## Features
 
-### 1
+### 1. form Validation (client-side)
 - Username - required, cannot be empty
 - Email - Must match standard email pattern (regex)
 - Password - Minimum 8 characters
 - Terms Checkbox - Must be checked
 - Error message appear next to each invalid field 
 - Input borders turn red on validation failure
+
+### 2. Resend Button Timer
+- Button is disabled by default when page loads
+- 10 seconds countdown using setInterval()
+- when timer reaches 0, `clearInterval()` stops the countdown
+- Button becomes enabled and clickable
 
 ---
 
